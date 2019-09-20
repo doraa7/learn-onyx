@@ -60,7 +60,11 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN >>>
+(defn upper-case [segment]
+  (update-in segment [:name] #(clojure.string/upper-case %)))
 
+(defn interpose-char [interposing-char segment]
+  (update-in segment [:name] #(apply str (interpose interposing-char (vec %)))))
 ;; <<< END FILL ME IN >>>
 
 ;;; Lifecycles ;;;

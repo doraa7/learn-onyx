@@ -5,7 +5,20 @@
 
 ;;; <<< BEGIN FILL ME IN >>>
 
-(def workflow)
+(def workflow
+  [[:A :D]
+   [:B :D]
+   [:C :E]
+   [:D :F]
+   [:D :G]
+   [:E :G]
+   [:E :H]
+   [:E :I]
+   [:G :L]
+   [:H :L]
+   [:I :L]
+   [:F :J]
+   [:F :K]])
 
 ;;; <<< END FILL ME IN >>>
 

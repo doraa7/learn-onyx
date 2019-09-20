@@ -23,7 +23,23 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN >>>
+      {:onyx/name :times
+       :onyx/type :function
+       :onyx/fn :workshop.challenge-2-2/times
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :my/mult-param 3
+       :onyx/params [:my/mult-param]
+       :onyx/doc "Multiplies :n in the segment by a value provided via the catalog :onyx/params entry"}
 
+      {:onyx/name :plus
+       :onyx/type :function
+       :onyx/fn :workshop.challenge-2-2/plus
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :my/sum-param 50
+       :onyx/params [:my/sum-param]
+       :onyx/doc "Adds fifty to :n in the segment by a value provided via the catalog :onyx/params entry"}
       ;; <<< END FILL ME IN >>>
 
       {:onyx/name :write-segments

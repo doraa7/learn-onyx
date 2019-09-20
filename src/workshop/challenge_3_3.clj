@@ -22,7 +22,12 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN PART 1 >>>
-
+      {:onyx/name :transform-name
+       :onyx/fn :workshop.challenge-3-3/prepend-tilde-append-question-mark
+       :onyx/type :function
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :onyx/doc "Prepend tilde and then append question-mark"}
       ;; <<< END FILL ME IN PART 1 >>>
 
       {:onyx/name :write-segments
@@ -37,7 +42,8 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN PART 2 >>>
-
+(defn prepend-tilde-append-question-mark [segment]
+  (update-in segment [:name] #(str "~" % "?")))
 ;; <<< END FILL ME IN  PART 2 >>>
 
 ;;; Lifecycles ;;;

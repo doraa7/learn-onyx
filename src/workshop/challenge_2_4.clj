@@ -22,7 +22,15 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN >>>
-
+      {:onyx/name :identity
+       :onyx/type :function
+       :onyx/fn :clojure.core/identity
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       ;; Presence of this key doesn't affect execution at this phase
+       ;; don't know how it affects the execution, exactly
+       :onyx/max-peers 3
+       :onyx/doc "Multiplies :n in the segment by 3"}
       ;; <<< END FILL ME IN >>>
 
       {:onyx/name :write-segments

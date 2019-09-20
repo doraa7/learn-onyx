@@ -86,7 +86,17 @@
 ;;; Flow conditions ;;;
 
 ;; <<< BEGIN FILL ME IN >>>
+(defn child? [event old new all-new]
+  (< (:age new) 18))
 
-(def flow-conditions)
+(def flow-conditions
+  [{:flow/from :identity
+    :flow/to [:children]
+    :flow/predicate :workshop.challenge-5-4/child?
+    :flow/exclude-keys [:age]}
 
+   {:flow/from :identity
+    :flow/to [:adults]
+    :flow/predicate [:not :workshop.challenge-5-4/child?]
+    :flow/exclude-keys [:age]}])
 ;; <<< END FILL ME IN >>>

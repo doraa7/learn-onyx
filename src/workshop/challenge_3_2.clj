@@ -40,9 +40,8 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN >>>
-
-
-
+(defn split-sentence [segment]
+  (map (fn [val] {:word val}) (clojure.string/split (:sentence segment) #" ")))
 ;; <<< END FILL ME IN >>>
 
 ;;; Lifecycles ;;;

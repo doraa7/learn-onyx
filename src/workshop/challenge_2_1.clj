@@ -23,8 +23,26 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN >>>
+      {:onyx/name :times-three
+       :onyx/type :function
+       :onyx/fn :workshop.challenge-2-1/times-three
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       ;; Presence of this key doesn't affect execution at this phase
+       ;; don't know how it affects the execution, exactly
+       :onyx/max-peers 1
+       :onyx/doc "Multiplies :n in the segment by 3"}
 
- 
+      {:onyx/name :plus-fifty
+       :onyx/type :function
+       :onyx/fn :workshop.challenge-2-1/plus-fifty
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       ;; Presence of this key doesn't affect execution at this phase
+       ;; don't know how it affects the execution, exactly
+       :onyx/max-peers 1
+       :onyx/doc "Adds fifty to :n in the segment"}
+
       ;; <<< END FILL ME IN >>>
 
       {:onyx/name :write-segments

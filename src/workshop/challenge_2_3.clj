@@ -22,6 +22,26 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN >>>
+      ;; by me
+      ;; {:onyx/name :identity
+      ;;  :onyx/type :function
+      ;;  :onyx/fn :workshop.challenge-2-3/identity
+      ;;  :onyx/batch-size batch-size
+      ;;  :onyx/batch-timeout batch-timeout
+      ;;  :onyx/group-by-key :user-id
+      ;;  :onyx/min-peers 2
+      ;;  :onyx/flux-policy :continue
+      ;;  :onyx/doc "Multiplies :n in the segment by 3"}
+
+      {:onyx/name :identity
+       :onyx/fn :clojure.core/identity
+       :onyx/type :function
+       :onyx/group-by-key :user-id
+       :onyx/flux-policy :kill
+       :onyx/min-peers 2
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :onyx/doc "A simple identity function"}
 
       ;; <<< END FILL ME IN >>>
 
@@ -35,6 +55,10 @@
        :onyx/doc "Writes segments to a core.async channel"}]))
 
 ;;; Functions ;;;
+;; this is by me
+;; but not required
+(defn identity [segment]
+  (update-in segment [:n] identity))
 
 ;;; Lifecycles ;;;
 

@@ -23,7 +23,12 @@
        :onyx/doc "Reads segments from a core.async channel"}
 
       ;; <<< BEGIN FILL ME IN PART 1 >>>
-
+      {:onyx/name :capitalize-names
+       :onyx/fn :workshop.challenge-3-4/capitalize-names
+       :onyx/type :function
+       :onyx/batch-size batch-size
+       :onyx/batch-timeout batch-timeout
+       :onyx/doc "Capitalizee the string"}
       ;; <<< END FILL ME IN PART 1 >>>
 
       {:onyx/name :write-segments
@@ -38,7 +43,8 @@
 ;;; Functions ;;;
 
 ;; <<< BEGIN FILL ME IN PART 2 >>>
-
+(defn capitalize-names [segment]
+  (update-in segment [:name] #(clojure.string/capitalize %)))
 ;; <<< END FILL ME IN PART 2 >>>
 
 ;;; Lifecycles ;;;
